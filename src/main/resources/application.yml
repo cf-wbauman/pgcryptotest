@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: pgcryptotest
+
+  datasource:
+    url: jdbc:postgresql://localhost:5440/testdb
+    username: user
+    password: password
+    hikari:
+      connection-init-sql: select set_config('encryption.key', '${security.properties.encryption-key}', false)
+
+security:
+  properties:
+    encryption-key: 'your-secret-key' # this can be injected, e.g., from Azure Key Vault
