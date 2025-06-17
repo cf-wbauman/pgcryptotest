@@ -1,0 +1,19 @@
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "name": "Tadeusz",
+  "pesel": 112233445566
+}
+
+###
+
+GET http://localhost:8080/employees
+
+###
+
+GET http://localhost:8080/employees/decrypted-pesel
+
+###
+
+GET http://localhost:8080/employees/encrypted-pesel
